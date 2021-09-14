@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import classes from './searchbar.module.css';
 
-const SearchBar = ({ className, ...props }) => {
+const SearchBar = ({ className, disabled, ...props }) => {
   const inputRef = useRef();
 
   const handleKeyDown = (e) => {
@@ -21,9 +21,12 @@ const SearchBar = ({ className, ...props }) => {
   }, []);
 
   return (
-    <div className={classes.searchbar_wrapper}>
+    <div
+      className={`${classes.searchbar_wrapper} ${disabled ? ' disabled' : ''}`}
+      onClick={() => inputRef?.current?.focus()}
+    >
       <input className={`${classes.input_search} ${className}`} {...props} ref={inputRef} />
-      <div className="searchbar_tip">ctrl + /</div>
+      <div className={classes.searchbar_tip}>ctrl + /</div>
     </div>
   );
 };

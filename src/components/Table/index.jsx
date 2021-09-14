@@ -5,7 +5,7 @@ import classes from './table.module.css';
 const Table = ({ data, columns, message, className, ...props }) => {
   return (
     <div className={classes.table_wrapper}>
-      <table clasName={className} {...props}>
+      <table className={className} {...props}>
         <thead>
           <tr>
             {columns.map((name, i) => (
