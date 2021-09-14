@@ -1,0 +1,27 @@
+.searchbar_wrapper {
+  width: 241px;
+  max-width: 100%;
+  display: flex;
+  border: 1px solid var(--text-color);
+}
+
+.searchbar_wrapper:focus-within {
+    border: 1px solid dodgerblue;
+}
+
+.input_search {
+  display: flex;
+  flex-basis: 80%;
+  outline: 0 !important;
+  border: 0 !important;
+  height: 100%;
+}
+
+.searchbar_tip {
+  flex-basis: 20%;
+  white-space: nowrap;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
